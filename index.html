@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Brawl Stars 1v1 Aim Trainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- MENU SCREEN -->
+    <div class="screen menu-screen active" id="menuScreen">
+        <div class="menu-content">
+            <h1 class="game-title">🎯 BRAWL AIM TRAINER</h1>
+            <p class="subtitle">Aim ve Dodge Becerilerini Geliştir!</p>
+            
+            <div class="difficulty-container">
+                <button class="difficulty-btn easy" onclick="startGame('easy')">
+                    <div class="diff-icon">⭐</div>
+                    <div class="diff-name">KOLAY</div>
+                    <div class="diff-info">Yavaş bot, basit hareketler</div>
+                </button>
+                
+                <button class="difficulty-btn medium" onclick="startGame('medium')">
+                    <div class="diff-icon">⭐⭐</div>
+                    <div class="diff-name">ORTA</div>
+                    <div class="diff-info">Hızlı bot, iyi aim</div>
+                </button>
+                
+                <button class="difficulty-btn hard" onclick="startGame('hard')">
+                    <div class="diff-icon">⭐⭐⭐</div>
+                    <div class="diff-name">ÇOK ZOR</div>
+                    <div class="diff-info">Mükemmel aim ve dodge!</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div class="screen game-screen" id="gameScreen">
+        <!-- Top HUD -->
+        <div class="top-hud">
+            <div class="score-container left">
+                <span class="star-icon">⭐</span>
+                <span class="score-text" id="playerScore">0/20</span>
+            </div>
+            
+            <div class="timer" id="timer">1:40</div>
+            
+            <div class="score-container right">
+                <span class="score-text" id="botScore">0/20</span>
+                <span class="star-icon">⭐</span>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Bottom Controls -->
+        <div class="controls">
+            <!-- Joystick -->
+            <div class="joystick-area">
+                <div class="joystick-outer" id="joystickOuter">
+                    <div class="joystick-inner" id="joystickInner"></div>
+                </div>
+            </div>
+
+            <!-- Ammo Display -->
+            <div class="ammo-display" id="ammoDisplay">
+                <div class="ammo-slot filled"></div>
+                <div class="ammo-slot filled"></div>
+                <div class="ammo-slot filled"></div>
+            </div>
+
+            <!-- Fire Button -->
+            <div class="fire-area">
+                <button class="fire-button" id="fireButton">
+                    <div class="fire-icon">🎯</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAME OVER SCREEN -->
+    <div class="screen gameover-screen" id="gameoverScreen">
+        <div class="gameover-content">
+            <h1 class="result-title" id="resultTitle">KAZANDIN!</h1>
+            
+            <div class="stats-box">
+                <div class="stat-row">
+                    <span class="stat-label">Final Skor:</span>
+                    <span class="stat-value" id="finalScore">15 - 8</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">İsabet Oranı:</span>
+                    <span class="stat-value" id="accuracy">78%</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Toplam Hasar:</span>
+                    <span class="stat-value" id="totalDamage">12,500</span>
+                </div>
+            </div>
+
+            <button class="menu-btn" onclick="showMenu()">
+                <span>ANA MENÜ</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
